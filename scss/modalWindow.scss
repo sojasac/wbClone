@@ -4,9 +4,12 @@
 /*!_________________________________________________________________*/
 .modal-user {
   width: 30vw;
+  max-height: 600px;
   padding: 25px 0;
   position: fixed;
   z-index: 2;
+  // overflow: scroll;
+  box-sizing: border-box;
   @include modalCenter;
   @include modalWindow;
   @include flexCenter;
@@ -15,6 +18,7 @@
     font-weight: 600;
     font-size: 20px;
     color: $pinkWB;
+    margin: 10px 0;
   }
   &__form {
     margin: 10px 0;
@@ -61,6 +65,8 @@
     margin: 10px 0 0 0;
     width: 100%;
     box-sizing: border-box;
+    height: 300px;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
