@@ -4,7 +4,7 @@
 /*!_________________________________________________________________*/
 .modal-user {
   width: 30vw;
-  height: 25vh;
+  padding: 25px 0;
   position: fixed;
   z-index: 2;
   @include modalCenter;
@@ -17,6 +17,7 @@
     color: $pinkWB;
   }
   &__form {
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     @include flexCenter;
@@ -48,13 +49,7 @@
 /*! Modal Cart
 /*!_________________________________________________________________*/
 .modal_cart {
-  width: 30vw;
-  position: fixed;
-  z-index: 2;
-  @include modalCenter;
-  @include modalWindow;
-  @include flexCenter;
-  border-radius: 10px;
+  @extend .modal-user;
   &-title {
     font-size: 35px;
     height: 10%;

@@ -16,10 +16,7 @@ export class WBController {
       onCart : this.cart,
       onRemoveCartRow : this.removeCartRow,
       onCreateUser : this.createUser,
-    });
-
-    console.log(this.storage.getShopCards())
-    
+    });  
   }
 
   cardCreate = (cards) => {
@@ -40,7 +37,6 @@ export class WBController {
   }
 
   cart = () => {
-    console.log(this.storage.getShopCards())
     this.view.renderCart(this.storage.getShopCards())
   }
 

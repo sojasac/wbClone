@@ -12,7 +12,6 @@ export class CartModal {
         this.modal.append(this.list)
         this.modal.addEventListener('click', ({target}) => {
             if(target.id === 'cart_delete'){
-                console.log(onRemoveCartRow)
                 onRemoveCartRow(target.dataset.cartDel)
             }
             if (target.id === 'close_modal'){
@@ -39,7 +38,6 @@ export class CartModal {
 
     removeCartRow = (cardId) => {
         const row = document.getElementById(cardId + 1);
-        console.log(row)
         if(row){
             row.remove()
         }
