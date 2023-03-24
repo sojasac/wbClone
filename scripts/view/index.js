@@ -155,7 +155,7 @@ export class WBView {
   renderCartModal = () => {
     this.functions.cart()
       document.getElementById('modal_cart').style.display = 'flex'
-      this.functions.overlayRender.style.visibility = 'visible';
+      this.renderOverlay()
       this.functions.overlayRender.style.top = '0';
   }
 

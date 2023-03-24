@@ -31,6 +31,16 @@ body {
   margin: 0;
   background: -webkit-gradient(linear, left top, right top, from(rgb(203, 17, 171)), to(#481173));
   background: linear-gradient(90deg, rgb(203, 17, 171), #481173);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 body.__lock {
   overflow: hidden;
@@ -731,10 +741,13 @@ ___________________________________________*/
 /*!_________________________________________________________________*/
 .modal-user, .modal_cart {
   width: 30vw;
+  max-height: 600px;
   padding: 25px 0;
   position: fixed;
   z-index: 2;
-  top: 20%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -758,6 +771,7 @@ ___________________________________________*/
   font-weight: 600;
   font-size: 20px;
   color: rgb(203, 17, 171);
+  margin: 10px 0;
 }
 .modal-user__form {
   margin: 10px 0;
@@ -817,6 +831,8 @@ ___________________________________________*/
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 300px;
+  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
