@@ -1,0 +1,129 @@
+@import "variables.scss";
+
+/*! Modal User
+/*!_________________________________________________________________*/
+.modal-user {
+  width: 30vw;
+  height: 25vh;
+  position: fixed;
+  z-index: 2;
+  @include modalCenter;
+  @include modalWindow;
+  @include flexCenter;
+  border-radius: 10px;
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    color: $pinkWB;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @include flexCenter;
+    width: 75%;
+    height: 50%;
+    &__input {
+      width: 100%;
+      margin: 10px 0;
+      height: 30px;
+      border: 1px solid lightgray;
+      padding: 0 10px;
+      border-radius: 5px;
+      margin: 0 0 20px 0;
+      &:focus{
+        outline: none;
+      }
+    }
+    &__btn {
+      width: 50%;
+    }
+  }
+}
+.modal-user-header{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*! Modal Cart
+/*!_________________________________________________________________*/
+.modal_cart {
+  width: 30vw;
+  position: fixed;
+  z-index: 2;
+  @include modalCenter;
+  @include modalWindow;
+  @include flexCenter;
+  border-radius: 10px;
+  &-title {
+    font-size: 35px;
+    height: 10%;
+    padding: 15px 0;
+    text-align: center;
+    color: $pinkWB;
+  }
+  &-content{
+    margin: 10px 0 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_item{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0 10px 0;
+        & td:not(:last-child) {
+          width: 35%;
+          text-align: center;
+        }
+        & td:last-child {
+          width: 20%;
+          text-align: center;
+        }
+  }
+    &_delete{
+      color: red;
+    }
+  }
+}
+.close-modal-window {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    outline: 1px solid red;
+    border-radius: 20%;
+    color: red;
+
+  }
+}
+
+table {
+  width: 100%;
+  padding:  0 20px;
+}
+thead tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  & th:not(:last-child) {
+          width: 35%;
+          text-align: center;
+        }
+  & th:last-child {
+          width: 20%;
+          text-align: center;
+        }
+}
+.welcome_wrapper{
+  text-align: center;
+}
+
+.userAuthorization_text{
+  color: #fff;
+}

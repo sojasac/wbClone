@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+.footer {
+  padding: 25px 0;
+}
+.s-footer {
+  display: flex;
+  @include flexCenter;
+  &__item {
+    @include footrText;
+    display: flex;
+    flex-direction: column;
+    @include flexCenter;
+    width: 25%;
+    min-width: 90px;
+    &__row {
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      font-size: 12px;
+      &:hover {
+        color: rgb(255, 255, 255);
+      }
+    }
+    &__row-title {
+      color: rgb(255, 255, 255);
+      cursor: default;
+      margin: 10px auto;
+      font-size: 16px;
+    }
+
+    &__row-content__text{
+      margin: 0 0 10px 0;
+      & i {
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+}
+.footer-adapt {
+  z-index: 3;
+  display: none;
+}

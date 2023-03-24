@@ -1,0 +1,108 @@
+@import "variables.scss";
+
+/*! Header
+/*!_________________________________________________________________*/
+#delivery {
+  display: none;
+}
+.s-header {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  &__burger-wrapper {
+    border: 2px solid $headerHover;
+    border-radius: 25%;
+    padding: 5px;
+    @include svgSizeBurger;
+    display: flex;
+    @include flexCenter;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 35px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid rgba(255, 255, 255, 1);
+    }
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  &__logo-text-wrapper {
+    font-size: 35px;
+    height: 50px;
+    display: flex;
+    @include flexCenter;
+    text-transform: uppercase;
+    @include headerText;
+  }
+
+  &__form {
+    border: 2px solid $headerHover;
+    border-radius: 50px;
+    background-color: $headerHover;
+    padding: 0 15px;
+    display: flex;
+    @include flexCenter;
+    @include widthFrom;
+    &:hover {
+      background: $headerHoverAc;
+      border: 2px solid $headerHoverAc;
+    }
+    &__search-btn {
+      color: #fff;
+    }
+    &__search-inp {
+      @include heightSvgInp;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 0 10px 0 20px;
+      @include widthInp;
+      &:focus {
+        outline: none;
+      }
+      &:-internal-autofill-selected {
+        background-color: none !important;
+      }
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &__nav-item-wrapper {
+    display: flex;
+    @include flexCenter;
+    cursor: pointer;
+    font-size: 35px;
+    color: $headerHover;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+    &__item {
+      display: flex;
+      width: 50%;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.s-header__nav-item-wrapper__item__icon-wrapper__text {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  @include flexCenter;
+  color: $headerHover;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .nav_icons {
+    font-size: 28px;
+  }
+}

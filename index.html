@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/820788df6d.js" crossorigin="anonymous"></script>
+    <title>Wildberies clone</title>
+</head>
+<body>
+<!-- Header -->
+<header class="header" id="header">
+<div class="container">
+    <div class="welcome_wrapper" id="welcome_wrapper"></div>
+<section class="s-header section">
+    <div class="s-header__burger-wrapper" id="burger">
+            <i class="fa-solid fa-bars"></i>
+    </div> <!-- burger-wrapper -->
+    <a href="#" class="s-header__logo-text-wrapper">
+        <div class="s-header__logo-text-wrapper__text">
+            wildberries
+        </div> <!-- text -->
+    </a> <!-- logo-text-wrapper -->
+    <form class="s-header__form" id="searchForm">
+        <button type="submit" class="s-header__form__search-btn" id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button> <!-- svg-wrapper -->
+        <input class="s-header__form__search-inp" type="text" placeholder="Я ищу..." id="searchInput" name="search_input">
+    </form>
+    <div class="s-header__nav-item-wrapper">
+        <div class="s-header__nav-item-wrapper__item">
+                <div class="s-header__nav-item-wrapper__item__icon-wrapper__text" id="user">
+                    <div class="nav_icons"><i class="fa-solid fa-user"></i></div>
+                    Профиль
+                </div>
+        </div> <!-- nav-item -->
+
+        <div class="s-header__nav-item-wrapper__item">
+                <div class="s-header__nav-item-wrapper__item__icon-wrapper__text" id="cart">
+                    <div class="nav_icons"><i class="fa-solid fa-cart-shopping"></i></div>
+                    Корзина</div>
+        </div> <!-- nav-item -->
+        
+    </div> <!-- nav-item-wrapper -->
+</section> <!-- section-header -->
+</div> <!-- container -->
+</header>           <!-- Main -->
+<main class="main" id="main">
+  <aside class="aside" id="aside">
+   <ul class="aside__content">
+        <li class="aside__item">
+            <a href="#" class="aside__link">Женщинам</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+        </li>
+        <li class="aside__item">
+            <a href="#" class="aside__link">Мужчинам</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+        </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Обувь</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Одежда</a>
+            <i class="fa-solid fa-arrow-down"></i>
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Дом</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Красота</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Электронка</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Аксессуары</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+       <li class="aside__item">
+            <a href="#" class="aside__link">Мебель</a>
+            <i class="fa-solid fa-arrow-down"></i>
+            
+       </li>
+   </ul>
+</aside>
+<div class="userAuthorization" id="userAuthorization"></div>           
+<!-- Slider -->
+<div class="container">
+<section class="s-slider section" id="sliderSection">
+    <div class="s-slider__slider" id="slider">
+        <div class="s-slider__slider__line" id="sliderLine" >
+            <img src="./img/slider/img/big_woman_3_2_23.jpg" alt="">
+            <img src="./img/slider/img/big_hits_3_2_23.jpg" alt="">
+            <img src="./img/slider/img/big_skidki_3_2_23.jpg" alt="">
+        </div> <!-- slider__line -->
+        <div class="slider_btn slider_btn_prev" id="slider_prev">
+           <i class="fa-solid fa-arrow-left" id="slider_arrow__left"></i>
+        </div>
+        <div class="slider_btn slider_btn_next" id="slider_next">
+            <i class="fa-solid fa-arrow-right" id="slider_arrow__right"></i>
+        </div>
+    </div> <!-- slider -->
+</section> <!-- s-slider -->
+</div> <!-- container -->
+<div class="container">
+    <div class="hit">Хиты продаж</div>
+</div>
+
+<!-- Cards -->
+<div class="container">
+<section class="s-cards section">
+    <div class="s-cards__item-wrapper" id="cards_wrapper">
+    </div> <!-- item-wrapper -->
+
+    <button class="s-cards__btn btn" id="show_more">
+        <p href="#" class="s-cards__btn-show_more" id="show_more_text">Показать ещё</p> <!-- svg-wrapper -->
+         <i class="fa-solid fa-arrow-down"></i>
+    </button>
+</section> <!-- s-cards -->
+</div> <!-- container -->
+<div class="arrow_top" id="arrow_top"><i class="fa-solid fa-arrow-up"></i></div>
+</main>
+            <!-- Footer -->
+<footer class="footer">
+<div class="container">
+<section class="s-footer section">
+    <div class="s-footer__item">
+        <div class="s-footer__item__row s-footer__item__row-title">Покупателям:</div>
+        <ul class="s-footer__item__row s-footer__item__row-content">
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Способы оплаты</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Возврат товара</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Правила продажи товаров</a></i >
+        </ul>
+    </div> <!-- s-footer__item -->
+
+    <div class="s-footer__item">
+        <div class="s-footer__item__row s-footer__item__row-title">Наши проекты:</div>
+        <ul class="s-footer__item__row s-footer__item__row-content">
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">WB Guru</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Трудоустройство</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Цифровые товары</a></i >
+        </ul>
+    </div>
+
+    <div class="s-footer__item">
+        <div class="s-footer__item__row s-footer__item__row-title">Компания:</div>
+        <ul class="s-footer__item__row s-footer__item__row-content">
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">О нас</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Контакты</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><a class="s-footer__item__row">Вакансии</a></i >
+        </ul>
+    </div>
+
+    <div class="s-footer__item">
+        <div class="s-footer__item__row s-footer__item__row-title">Мы в соцсетях</div>
+        <ul class="s-footer__item__row s-footer__item__row-content">
+            <li class="s-footer__item__row s-footer__item__row-content__text"><i class="fa-brands fa-vk"></i><a class="s-footer__item__row">Вконтакте</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><i class="fa-brands fa-odnoklassniki"></i><a class="s-footer__item__row">Одноклассники</a></i >
+            <li class="s-footer__item__row s-footer__item__row-content__text" ><i class="fa-brands fa-youtube"></i><a class="s-footer__item__row">YouTube</a></i >
+        </ul>
+    </div>
+</section> <!-- s-footer -->
+</div> <!-- container -->
+</footer>
+        <!-- footer mob -->
+    <div class="footer-adapt">
+        <div class="container">
+            <div class="footer-adapt__wrap">
+                <div class="footer-adapt__wrap__item" id="footer_search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="footer-adapt__wrap__item" id="footer_cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="footer-adapt__wrap__item" id="footer_user">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/index.js" type="module"></script>
+</body>
+</html>
