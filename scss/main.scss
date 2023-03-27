@@ -12,64 +12,59 @@
 .userAuthorization{display: flex; justify-content: center; margin: 1%; font-size: 25px; font-weight: 900;}
 /* Slider
 ___________________________________________*/
-.s-slider {
+.image-slider {
   margin: 15px 0;
-  &__slider {
-    border: $pinkWB solid 1px;
-    max-width: 80%;
-    overflow: hidden;
-    position: relative;
-    left: 10%;
-    &__line {
-      display: flex;
-      transition: all ease 1s;
+  &__wrapper{
+    padding: 0 0 20px 0;
+  }
+
+  &__image{
+    & img{
+      max-width: 100%;
+      border-radius: 20px;
+    }
+  }
+  .image-slider__button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after{
+      font-size: 30px;
+      color: #000;
+    }
+    &:hover::after{
+      color: $pinkWB;
+    }
+  }
+
+  #slider_next::after{
+    margin-left: 5px;
+  }
+  #slider_prev::after{
+    margin-right: 5px;
+  }
+  #slider_pagination{
+    bottom: 0;
+    .swiper-pagination-bullet{
+      width: 12px;
+      height: 12px;
+      background: $pinkWB;
+      margin: 0 11px;
+      &-active-prev, &-active-next{
+        opacity: 0.6;
+        &-prev, &-next{
+          opacity: 0.4;
+        }
+      }
     }
   }
 }
 
-.slider_btn {
-  width: 5%;
-  height: 100%;
-  border: none;
-  position: absolute;
-  background: #fff;
-  opacity: 0.5;
-  display: flex;
-  @include flexCenter;
-}
 
-.slider_btn:hover {
-  background: $pinkWB;
-  opacity: 0.9;
-  transition: linear 0.5s;
-}
-.slider_btn_prev {
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-.slider_btn_next {
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-}
-
-.slider_btn_text {
-  font-size: 50px;
-  font-weight: 900;
-  color: $pinkWB;
-}
-.slider_btn_prev:hover #slider_arrow__left {
-  color: #e8ecee;
-}
-.slider_btn_next:hover #slider_arrow__right {
-  color: #e8ecee;
-}
-#slider_arrow__left,
-#slider_next {
-  font-size: 45px;
-  color: $pinkWB;
-}
 
 /* Cards
 ___________________________________________*/
@@ -78,9 +73,7 @@ ___________________________________________*/
 //   @include flexCenter;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   &__item-wrapper {
-    width: 90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     max-height: 800px;
@@ -232,7 +225,3 @@ ___________________________________________*/
         color: #000;
     }
 }
-
-
-
-
