@@ -1,3 +1,6 @@
+/* Fonts
+___________________________________________*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 /* Center
 ___________________________________________*/
 /* Color
@@ -8,6 +11,11 @@ ___________________________________________*/
 ___________________________________________*/
 /* Font Size
 ___________________________________________*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 *,
 ::before ::after {
   -webkit-box-sizing: border-box;
@@ -76,6 +84,7 @@ ul, li {
   width: 90%;
   max-width: 1400px;
   margin: 0% auto;
+  overflow: hidden;
 }
 
 input:-webkit-autofill,
@@ -168,6 +177,8 @@ input:-webkit-autofill:focus {
   background: rgba(153, 9, 129, 0.8);
 }
 
+/* Fonts
+___________________________________________*/
 /* Center
 ___________________________________________*/
 /* Color
@@ -342,6 +353,8 @@ ___________________________________________*/
   font-size: 28px;
 }
 
+/* Fonts
+___________________________________________*/
 /* Center
 ___________________________________________*/
 /* Color
@@ -454,7 +467,7 @@ ___________________________________________*/
   display: grid;
   -ms-grid-columns: minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px);
   grid-template-columns: repeat(5, minmax(150px, 260px));
-  max-height: 800px;
+  max-height: 930px;
   overflow: hidden;
   gap: 20px 30px;
   -webkit-transition: max-height 0.5s;
@@ -469,9 +482,9 @@ ___________________________________________*/
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -487,15 +500,15 @@ ___________________________________________*/
   cursor: pointer;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  margin: 0 0 10px 0;
-}
-.s-cards__item-wrapper__item-img:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  margin-bottom: 10px;
 }
 .s-cards__item-wrapper__item__wrapper-text {
   width: 100%;
   text-align: start;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
 }
 .s-cards__item-wrapper__item__wrapper-text__price {
   font-size: 25px;
@@ -507,6 +520,13 @@ ___________________________________________*/
 }
 .s-cards__item-wrapper__item__wrapper-text__delivery-time {
   text-align: start;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.s-cards__item-wrapper__item__wrapper-text__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .s-cards__item-wrapper__item__wrapper-text__icon-wrapper {
   display: -webkit-box;
@@ -518,8 +538,17 @@ ___________________________________________*/
 .s-cards__item-wrapper__item__wrapper-text__icon-wrapper:hover > i {
   color: yellow;
 }
-.s-cards__item-wrapper__item .cards-text:nth-child(-n+2) {
-  margin: 0 0 10px 0;
+.s-cards__item-wrapper__item__wrapper-text::after {
+  content: "";
+  width: 30%;
+  max-width: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, #fff), to(hsla(0deg, 0%, 100%, 0)));
+  background: linear-gradient(270deg, #fff 0, hsla(0deg, 0%, 100%, 0));
 }
 .s-cards__item-wrapper__item__btn {
   color: white;
@@ -643,6 +672,8 @@ ___________________________________________*/
   color: #000;
 }
 
+/* Fonts
+___________________________________________*/
 /* Center
 ___________________________________________*/
 /* Color
@@ -712,6 +743,8 @@ ___________________________________________*/
   display: none;
 }
 
+/* Fonts
+___________________________________________*/
 /* Center
 ___________________________________________*/
 /* Color
@@ -896,6 +929,8 @@ thead tr th:last-child {
   color: #fff;
 }
 
+/* Fonts
+___________________________________________*/
 /* Center
 ___________________________________________*/
 /* Color
@@ -910,8 +945,8 @@ ___________________________________________*/
 /*!_________________________________________________________________*/
 @media (max-width: 1450px) {
   .s-cards__item-wrapper {
-    -ms-grid-columns: (1fr)[4];
-    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (minmax(150px, 260px))[4];
+    grid-template-columns: repeat(4, minmax(150px, 260px));
   }
 }
 @media (max-width: 1250px) {
@@ -924,11 +959,8 @@ ___________________________________________*/
   .aside {
     width: 40%;
   }
-  .slider_btn_text {
-    font-size: 30px;
-  }
-  .s-cards__btn {
-    height: 45px;
+  .image-slider .swiper-slide {
+    width: 100%;
   }
   #slider_prev {
     display: none;
@@ -942,8 +974,8 @@ ___________________________________________*/
 }
 @media (max-width: 875px) {
   .s-cards__item-wrapper {
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (minmax(150px, 260px))[3];
+    grid-template-columns: repeat(3, minmax(150px, 260px));
   }
   .s-header__form {
     margin: 0 15px 0 15px;
@@ -963,25 +995,14 @@ ___________________________________________*/
     padding: 0 0 20px 0;
   }
   .s-cards__item-wrapper {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (minmax(150px, 260px))[2];
+    grid-template-columns: repeat(2, minmax(150px, 260px));
   }
   .s-cards__item-wrapper__item__btn {
     width: 100%;
   }
   .s-cards__btn {
     width: 60%;
-  }
-  .s-cards__item-wrapper__item__wrapper-text {
-    text-align: center;
-  }
-  .s-cards__item-wrapper__item__wrapper-text__delivery-time {
-    text-align: center;
-  }
-  .s-cards__item-wrapper__item__wrapper-text__icon-wrapper {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .s-footer,
 .footer {
@@ -1042,8 +1063,8 @@ ___________________________________________*/
     display: none;
   }
   .s-cards__item-wrapper {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: minmax(150px, 300px);
+    grid-template-columns: minmax(150px, 300px);
   }
   .s-header {
     -ms-flex-wrap: nowrap;
