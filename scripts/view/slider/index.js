@@ -3,6 +3,7 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.brow
 export class SliderView {
   constructor(){
     this.slider = new Swiper('.image-slider', {
+      spaceBetween: 1,
       // Стрелки
       navigation: {
         nextEl : '#slider_next',
@@ -15,7 +16,7 @@ export class SliderView {
         dynamicBullets: true
       },
       // Убираем тачлуп на пк
-      simulateTouch: false,
+      // simulateTouch: false,
       watchOverflow: true,
       // Карусельность
       loop: true,
