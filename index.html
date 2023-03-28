@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/820788df6d.js" crossorigin="anonymous"></script>
     <title>Wildberies clone</title>
 </head>
@@ -47,90 +48,99 @@
 </div> <!-- container -->
 </header>           <!-- Main -->
 <main class="main" id="main">
-  <aside class="aside" id="aside">
-   <ul class="aside__content">
-        <li class="aside__item">
-            <a href="#" class="aside__link">Женщинам</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-        </li>
-        <li class="aside__item">
-            <a href="#" class="aside__link">Мужчинам</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-        </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Обувь</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Одежда</a>
-            <i class="fa-solid fa-arrow-down"></i>
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Дом</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Красота</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Электронка</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Аксессуары</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-       <li class="aside__item">
-            <a href="#" class="aside__link">Мебель</a>
-            <i class="fa-solid fa-arrow-down"></i>
-            
-       </li>
-   </ul>
-</aside>
-<div class="userAuthorization" id="userAuthorization"></div>           
-<!-- Slider -->
 <div class="container">
-<section class="s-slider section" id="sliderSection">
-    <div class="s-slider__slider" id="slider">
-        <div class="s-slider__slider__line" id="sliderLine" >
-            <img src="./img/slider/img/big_woman_3_2_23.jpg" alt="">
-            <img src="./img/slider/img/big_hits_3_2_23.jpg" alt="">
-            <img src="./img/slider/img/big_skidki_3_2_23.jpg" alt="">
-        </div> <!-- slider__line -->
-        <div class="slider_btn slider_btn_prev" id="slider_prev">
-           <i class="fa-solid fa-arrow-left" id="slider_arrow__left"></i>
-        </div>
-        <div class="slider_btn slider_btn_next" id="slider_next">
-            <i class="fa-solid fa-arrow-right" id="slider_arrow__right"></i>
-        </div>
-    </div> <!-- slider -->
-</section> <!-- s-slider -->
-</div> <!-- container -->
-<div class="container">
-    <div class="hit">Хиты продаж</div>
+    <aside class="aside" id="aside">
+       <ul class="aside__content">
+            <li class="aside__item">
+                <a href="#" class="aside__link">Женщинам</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+            </li>
+            <li class="aside__item">
+                <a href="#" class="aside__link">Мужчинам</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+            </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Обувь</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Одежда</a>
+                <i class="fa-solid fa-arrow-down"></i>
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Дом</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Красота</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Электронка</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Аксессуары</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+           <li class="aside__item">
+                <a href="#" class="aside__link">Мебель</a>
+                <i class="fa-solid fa-arrow-down"></i>
+                
+           </li>
+       </ul>
+    </aside>
+    <div class="userAuthorization" id="userAuthorization"></div>           
+    <!-- Slider -->
+    <section class="s-slider section" id="sliderSection">
+        <div class="image-slider swiper">
+            <!-- Additional required wrapper -->
+            <div class="image-slider__wrapper swiper-wrapper">
+              <!-- Slides -->
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="./img/slider/img/big_woman_3_2_23.jpg" alt="">
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="./img/slider/img/big_hits_3_2_23.jpg" alt="">
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide">
+                    <div class="image-slider__image">
+                        <img src="./img/slider/img/big_skidki_3_2_23.jpg" alt="">
+                    </div>
+                </div>
+            </div> 
+            <div class="image-slider__pagination swiper-pagination" id="slider_pagination"></div>
+            <div class="image-slider__button swiper-button-prev" id="slider_prev"></div>
+            <div class="image-slider__button swiper-button-next" id="slider_next"></div>
+    
+          </div>           
+    </section>
+
+    <h2 class="hit">Хиты продаж</h2>
+    
+    <!-- Cards -->
+    <section class="s-cards section">
+        <div class="s-cards__item-wrapper" id="cards_wrapper">
+        </div> <!-- item-wrapper -->
+    
+        <button class="s-cards__btn btn" id="show_more">
+            <p href="#" class="s-cards__btn-show_more" id="show_more_text">Показать ещё</p> <!-- svg-wrapper -->
+             <i class="fa-solid fa-arrow-down"></i>
+        </button>
+    </section> <!-- s-cards -->
+    <div class="arrow_top" id="arrow_top"><i class="fa-solid fa-arrow-up"></i></div>
 </div>
-
-<!-- Cards -->
-<div class="container">
-<section class="s-cards section">
-    <div class="s-cards__item-wrapper" id="cards_wrapper">
-    </div> <!-- item-wrapper -->
-
-    <button class="s-cards__btn btn" id="show_more">
-        <p href="#" class="s-cards__btn-show_more" id="show_more_text">Показать ещё</p> <!-- svg-wrapper -->
-         <i class="fa-solid fa-arrow-down"></i>
-    </button>
-</section> <!-- s-cards -->
-</div> <!-- container -->
-<div class="arrow_top" id="arrow_top"><i class="fa-solid fa-arrow-up"></i></div>
 </main>
             <!-- Footer -->
 <footer class="footer">
@@ -190,6 +200,7 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/index.js" type="module">
+    </script>
 </body>
 </html>
