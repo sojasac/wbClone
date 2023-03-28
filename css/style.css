@@ -73,7 +73,7 @@ ul, li {
 /*! Container
 /*!_________________________________________________________________*/
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 1400px;
   margin: 0% auto;
 }
@@ -452,23 +452,20 @@ ___________________________________________*/
 .s-cards__item-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
-  grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px) 30px minmax(150px, 260px);
+  grid-template-columns: repeat(5, minmax(150px, 260px));
   max-height: 800px;
   overflow: hidden;
-  row-gap: 10px;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  gap: 20px 30px;
   -webkit-transition: max-height 0.5s;
   transition: max-height 0.5s;
 }
 .s-cards__item-wrapper__item {
   width: 100%;
+  height: 460px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 400px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -479,6 +476,7 @@ ___________________________________________*/
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0;
 }
 .s-cards__item-wrapper__item-img {
   width: 100%;
@@ -487,6 +485,13 @@ ___________________________________________*/
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: 0 0 10px 0;
+}
+.s-cards__item-wrapper__item-img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 .s-cards__item-wrapper__item__wrapper-text {
   width: 100%;
@@ -512,6 +517,9 @@ ___________________________________________*/
 }
 .s-cards__item-wrapper__item__wrapper-text__icon-wrapper:hover > i {
   color: yellow;
+}
+.s-cards__item-wrapper__item .cards-text:nth-child(-n+2) {
+  margin: 0 0 10px 0;
 }
 .s-cards__item-wrapper__item__btn {
   color: white;
