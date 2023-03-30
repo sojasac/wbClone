@@ -8,7 +8,7 @@ import { searchForm } from "./search/constants.js";
 import { elements } from "../constants.js";
 
 export class WBView {
-  constructor({onToCartPurchase, onSearch, userName, onBackToCards, onCart, onRemoveCartRow, onCreateUser}){
+  constructor({onToCartPurchase, onSearch, userName, onBackToCards, onCart, onRemoveCartRow, onCreateUser, onRemoveCart}){
     this.instans = {
       slider : new SliderView(),
       userWelcome : new UserAuthorization({userName}),
@@ -17,6 +17,7 @@ export class WBView {
       modalWindows : new ModalWindowsView({
         onRemoveCartRow, 
         onCreateUser,
+        onRemoveCart,
         onCloseModal : this.closeModal,
       })
     }
@@ -69,12 +70,12 @@ export class WBView {
 
     })
 
-    elements.searchCart.addEventListener('click', () => {
+    elements.cartFooter.addEventListener('click', () => {
       this.scrollToTop();
       this.renderCartModal()
     })
 
-     elements.searchUser.addEventListener('click', () => {
+     elements.userFooter.addEventListener('click', () => {
       this.scrollToTop();
       this.renderUserModal()
     })
@@ -144,9 +145,6 @@ export class WBView {
       this.instans.modalWindows.addCartContent(cards)
     }
     
-    removeCartRow = (cardId) => {
-      this.instans.modalWindows.removeCart(cardId)
-    }
 
   closeModal = () => {
     this.removeOverlay()

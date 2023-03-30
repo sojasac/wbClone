@@ -54,6 +54,7 @@
 /*!_________________________________________________________________*/
 .modal_cart {
   @extend .modal-user;
+  width: 90%;
   &-title {
     font-size: 35px;
     height: 10%;
@@ -61,11 +62,12 @@
     text-align: center;
     color: $pinkWB;
   }
-  &-content{
+  &-content, &-footer{
     margin: 10px 0 0 0;
     width: 100%;
     box-sizing: border-box;
-    height: 300px;
+    min-height: 100px;
+    max-height: 300px;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -86,6 +88,23 @@
   }
     &_delete{
       color: red;
+    }
+  }
+  &-footer{
+    max-height: auto;
+    min-height: auto;
+    & tr {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    & td:not(:last-child) {
+      width: 35%;
+      text-align: center;
+    }
+    & td:last-child {
+      width: 20%;
+      text-align: center;
     }
   }
 }

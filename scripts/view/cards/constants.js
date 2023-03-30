@@ -8,5 +8,5 @@ export const cardClassName = {
     nameKey: 's-cards__item-wrapper__item__wrapper-text__name cards-text',
     aKey: 's-cards__item-wrapper__item__wrapper-text__icon-wrapper',
     rateKey: 's-cards__item-wrapper__item__wrapper-text__icon-wrapper__rate cards-text',
-    btnKey: 's-cards__item-wrapper__item__btn btn'
+    btnKey: 's-cards__item-wrapper__item__btn btn',
 }

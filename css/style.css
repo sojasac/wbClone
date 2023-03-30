@@ -838,6 +838,9 @@ ___________________________________________*/
 
 /*! Modal Cart
 /*!_________________________________________________________________*/
+.modal_cart {
+  width: 90%;
+}
 .modal_cart-title {
   font-size: 35px;
   height: 10%;
@@ -845,12 +848,13 @@ ___________________________________________*/
   text-align: center;
   color: rgb(203, 17, 171);
 }
-.modal_cart-content {
+.modal_cart-content, .modal_cart-footer {
   margin: 10px 0 0 0;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 300px;
+  min-height: 100px;
+  max-height: 300px;
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -863,7 +867,7 @@ ___________________________________________*/
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.modal_cart-content_item {
+.modal_cart-content_item, .modal_cart-footer_item {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -873,16 +877,37 @@ ___________________________________________*/
           justify-content: space-between;
   margin: 0 0 10px 0;
 }
-.modal_cart-content_item td:not(:last-child) {
+.modal_cart-content_item td:not(:last-child), .modal_cart-footer_item td:not(:last-child) {
   width: 35%;
   text-align: center;
 }
-.modal_cart-content_item td:last-child {
+.modal_cart-content_item td:last-child, .modal_cart-footer_item td:last-child {
   width: 20%;
   text-align: center;
 }
-.modal_cart-content_delete {
+.modal_cart-content_delete, .modal_cart-footer_delete {
   color: red;
+}
+.modal_cart-footer {
+  max-height: auto;
+  min-height: auto;
+}
+.modal_cart-footer tr {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.modal_cart-footer td:not(:last-child) {
+  width: 35%;
+  text-align: center;
+}
+.modal_cart-footer td:last-child {
+  width: 20%;
+  text-align: center;
 }
 
 .close-modal-window {
