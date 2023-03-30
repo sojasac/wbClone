@@ -26,15 +26,18 @@ export function createTable(){
       th.textContent = key;
       tr.append(th)
     }
-    const cartContent = document.createElement('tbody')
-    cartContent.classList.add(names.modalCartContent)
+    const cartContent = document.createElement('tbody');
+    cartContent.classList.add(names.modalCartContent);
+
+    const cartFooter = document.createElement('tfoot');
+    cartFooter.classList.add(names.cartFooter);
 
     tableHead.append(tr);
-    table.append(tableHead, cartContent)
+    table.append(tableHead, cartContent, cartFooter)
     return table
   }
 
-export function cartItem ({cardName, price, id}) {
+export function cartItem ({cardName, price, id, cardCount}) {
     const cartRow = document.createElement('tr')
     cartRow.classList.add(names.modalCartItem);
     cartRow.id = id + 1;
@@ -45,9 +48,12 @@ export function cartItem ({cardName, price, id}) {
             item.textContent = `${cardName}`
         }
         if(item.className === names.cartRowNames[1]){
-            item.textContent = `${price} р.`
+            item.textContent = `${cardCount}`
         }
         if(item.className === names.cartRowNames[2]){
+            item.textContent = `${parseInt(price) * cardCount} р.`
+        }
+        if(item.className === names.cartRowNames[3]){
             item.innerHTML = `<button data-cart-del=${id} id='cart_delete'>X</button>`;
         }
         cartRow.append(item)
@@ -58,8 +64,21 @@ export function cartItem ({cardName, price, id}) {
 }
 
 export function emptyCart () {
-    const p = document.createElement('p');
-    p.textContent = 'Ваша корзина пуста'
+    const tr = document.createElement('tr');
+    tr.style.textAlign = 'center'
+    tr.textContent = 'Ваша корзина пуста'
 
-    return p
+    return tr
+}
+
+export function cartFooterContent (totalProducts, totalPrice) {
+    const trFootTotal = document.createElement('tr');
+    // trFootTotal.textContent = 'Итого:'
+    trFootTotal.innerHTML = `
+        <td>Колиество товаров: ${totalProducts}</td>
+        <td>Общая сумма: ${totalPrice} p.</td>
+        <td><button id="deleteAllCart_btn">Удалить все товары</button></td>
+    `
+    return trFootTotal
+
 }

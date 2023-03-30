@@ -22,12 +22,26 @@ export class WBData {
     return this.cards.slice()
   }
   pushShopCards = (id) => {
-    this.cards.forEach((el) => {
-      if(el.id === id){
-        this.shopCards.push(el)
-      };
-    });
-    localStorage.setItem(LocalStorageKey.cardsInCart, JSON.stringify(this.shopCards))
+    const index = this.shopCards.findIndex((el) => el.card.id === id);
+    console.log(id)
+    console.log(this.shopCards)
+    console.log(index)
+    if (index > -1){
+      this.shopCards[index].value += 1
+      localStorage.setItem(LocalStorageKey.cardsInCart, JSON.stringify(this.shopCards))
+    }
+    else {
+      this.cards.forEach((el) => {
+        if(el.id === id) {
+          this.shopCards.push({
+            card: el,
+            value: 1
+          })
+        }
+      })
+      localStorage.setItem(LocalStorageKey.cardsInCart, JSON.stringify(this.shopCards))
+    }
+    
   }
 
   createUsers = (userName) => {
@@ -43,12 +57,16 @@ export class WBData {
     return this.users.slice()[this.users.slice().length - 1]
   }
   getShopCards = () => {
-    return this.shopCards.slice();
+     this.shopCards.forEach((el) => {
+      el.card.cardCount = el.value
+    })
+
+    return this.shopCards.slice().map(el => el.card)
   }
 
 
-  removeShopCard = (cardId) => {
-      const indexToRemove = this.shopCards.findIndex(({ id }) => id === cardId);
+  removeRowCart = (cardId) => {
+      const indexToRemove = this.shopCards.findIndex((el) => el.card.id === cardId);
       if (indexToRemove > -1) {
         this.shopCards.splice(indexToRemove, 1)
       }
@@ -58,6 +76,11 @@ export class WBData {
         localStorage.setItem(LocalStorageKey.cardsInCart, JSON.stringify(this.shopCards));
       }
       return this.shopCards.slice();
+    }
+
+    removeAllCart = () => {
+      this.shopCards.splice(0, this.shopCards.length);
+      localStorage.removeItem(LocalStorageKey.cardsInCart)
     }
 
 

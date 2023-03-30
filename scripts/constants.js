@@ -7,7 +7,7 @@ export const elements = {
     showMore : document.getElementById('show_more'),
     scrollArrow : document.getElementById('arrow_top'),
     searchFooter : document.getElementById('footer_search'),
-    searchUser : document.getElementById('footer_user'),
-    searchCart : document.getElementById('footer_cart'),
+    userFooter : document.getElementById('footer_user'),
+    cartFooter : document.getElementById('footer_cart'),
     userBtn : document.getElementById('user'),
 }
