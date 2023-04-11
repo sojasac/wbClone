@@ -54,12 +54,14 @@ ul, li {
   // list-style: none;
   box-sizing: border-box;
 }
+
 /*! Container
 /*!_________________________________________________________________*/
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 1400px;
   @include blockCenter;
+  overflow: hidden;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 

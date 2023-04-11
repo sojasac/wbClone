@@ -75,29 +75,35 @@ ___________________________________________*/
   align-items: center;
   &__item-wrapper {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    max-height: 800px;
+    grid-template-columns: repeat(5, minmax(150px, 260px));
+    max-height: 930px;
     overflow: hidden;
-    row-gap: 10px;
-    column-gap: 10px;
+    gap: 20px 30px;
     transition: max-height 0.5s;
     &__item {
       width: 100%;
+      height: 460px;
       display: flex;
-      height: 400px;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       flex-direction: column;
+      padding: 0;
       &-img {
         width: 100%;
         height: 60%;
         margin-bottom: 1%;
         object-fit: cover;
         cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        margin-bottom: 10px;
       }
       &__wrapper-text {
         width: 100%;
         text-align: start;
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-family: $cardsFont;
         &__price {
             font-size: 25px;
             font-weight: 700;
@@ -108,6 +114,13 @@ ___________________________________________*/
         }
         &__delivery-time {
           text-align: start;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+        &__name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         &__icon-wrapper {
           display: flex;
@@ -117,6 +130,18 @@ ___________________________________________*/
           &:hover>i {
             color: yellow;
           }
+        }
+        &::after{
+          content: "";
+          width: 30%;
+          max-width: 70px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: auto;
+          background: linear-gradient(270deg,#fff 0,hsla(0,0%,100%,0));
+          // z-index: 1;
         }
       }
       &__btn {
