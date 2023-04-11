@@ -1,19 +1,24 @@
-import { createModal } from "./utilies.js";
-import { cartItem } from "./utilies.js";
-import { createTable } from "./utilies.js";
-import { emptyCart } from "./utilies.js";
-
+import { createModal, 
+    cartItem, 
+    createTable, 
+    emptyCart, 
+    cartFooterContent 
+} from "./utilies.js";
 
 
 export class CartModal {
-    constructor({onRemoveCartRow, onCloseModal}){
+    constructor({onRemoveCartRow, onCloseModal, onRemoveCart}){
         this.modal = createModal('Корзина');
-        this.list = createTable()
+        this.list = createTable();
         this.modal.append(this.list)
         this.modal.addEventListener('click', ({target}) => {
             if(target.id === 'cart_delete'){
                 onRemoveCartRow(target.dataset.cartDel)
             }
+            if(target.id === 'deleteAllCart_btn'){
+                onRemoveCart()
+            }
+            
             if (target.id === 'close_modal'){
                 onCloseModal()
             }
@@ -22,10 +27,15 @@ export class CartModal {
 
     createCartContent = (cards) => {
         this.list.tBodies[0].innerHTML = '';
+        let totalPrice = 0;
+        let count = 0;
         if (cards.length > 0) {
             for (const card of cards) {
             const item = cartItem(card);
             this.list.tBodies[0].append(item);
+            count += card.cardCount
+            let price = parseInt(card.price) * card.cardCount
+            totalPrice += price
         }
         }
         else {
@@ -33,15 +43,12 @@ export class CartModal {
             this.list.tBodies[0].innerHTML = '';
             this.list.tBodies[0].append(epmtyP);
         }
+        const footer = cartFooterContent(count,totalPrice)
+        this.list.tFoot.innerHTML = ``
+        this.list.tFoot.append(footer)
         document.body.append(this.modal)
     }
 
-    removeCartRow = (cardId) => {
-        const row = document.getElementById(cardId + 1);
-        if(row){
-            row.remove()
-        }
-    }
 
 
 }

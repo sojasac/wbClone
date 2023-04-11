@@ -13,9 +13,10 @@ export class WBController {
       onBackToCards : this.backToDefaultCards,
       onToCartPurchase : this.cardToCart,
       onSearch : this.search,
-      onCart : this.cart,
+      onCart : this.cartRender,
       onRemoveCartRow : this.removeCartRow,
       onCreateUser : this.createUser,
+      onRemoveCart : this.removeAllCartRows
     });  
   }
 
@@ -36,13 +37,20 @@ export class WBController {
     this.view.renderCards(this.storage.getSearch(searchValue))
   }
 
-  cart = () => {
+
+  cartRender = () => {
     this.view.renderCart(this.storage.getShopCards())
   }
 
   removeCartRow = (cardId) => {
-    this.storage.removeShopCard(cardId);
-    this.view.removeCartRow(cardId)
+    this.storage.removeRowCart(cardId);
+    this.view.renderCart(this.storage.getShopCards())
+    console.log(this.storage.getShopCards())
+  }
+
+  removeAllCartRows = () => {
+    this.storage.removeAllCart()
+    this.view.renderCart(this.storage.getShopCards())
   }
 
   createUser = (userName) => {

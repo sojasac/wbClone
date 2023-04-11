@@ -2,8 +2,8 @@ import { CartModal } from "./cartModal/index.js"
 import { ModalWindowUser } from "./userModal/index.js";
 
 export class ModalWindowsView {
-  constructor({onRemoveCartRow, onCloseModal, onCreateUser}){
-    this.cart = new CartModal({onRemoveCartRow, onCloseModal});
+  constructor({onRemoveCartRow, onCloseModal, onCreateUser, onRemoveCart}){
+    this.cart = new CartModal({onRemoveCartRow, onCloseModal, onRemoveCart});
     this.user = new ModalWindowUser({onCloseModal, onCreateUser})
   }
 
@@ -15,7 +15,6 @@ export class ModalWindowsView {
   }
 
   addCartContent = (cards) => {
-    console.log('main')
     this.cart.createCartContent(cards)
   }
 
